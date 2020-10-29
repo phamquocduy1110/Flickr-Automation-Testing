@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.KeyUpAction;
+import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -33,7 +34,7 @@ public class Change_Account_Password {
 	  	
 	  	//2.Click on 'Log In' button
 	  	driver.findElement(By.cssSelector(".gn-signin")).click();
-	  	WebDriverWait wait = new WebDriverWait(driver, 30);
+	  	WebDriverWait wait = new WebDriverWait(driver, 60);
 	  	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-email")));
 	  	//3.Send 'Username' value to the field
 		driver.findElement(By.id("login-email")).sendKeys("sakurakinomoto185@gmail.com");
@@ -41,7 +42,7 @@ public class Change_Account_Password {
 		//4.Click on 'Next'
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-password")));		
 		//5.Send 'Password' value to the field
-		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*123");		
+		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*01041996");		
 		//6.Click 'Log in' button
 		driver.findElement(By.cssSelector("form > button")).click();		
 		//7.Click the avatar icon
@@ -54,9 +55,15 @@ public class Change_Account_Password {
 				.click()
 				.build();
 		seriesOfActions.perform();
-		
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".menu-section li:nth-of-type(2)")));	
-		WebElement Settings = driver.findElement(By.cssSelector(".menu-section li:nth-of-type(2)"));
+		Settings();
+	}
+	
+	public void Settings() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		//wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".menu-section li:nth-of-type(2)")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/section[3]/ul/li[2]/a")));
+		//WebElement Settings = driver.findElement(By.cssSelector(".menu-section li:nth-of-type(2)"));
+		WebElement Settings = driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/section[3]/ul/li[2]/a"));
 		Actions builder2 = new Actions(driver);
 		Action seriesOfActions2 = builder2
 				.moveToElement(Settings)
@@ -66,16 +73,49 @@ public class Change_Account_Password {
 		ChangeAccountPassword();
 	}
 	
+	// Click on Edit your password
 	public void ChangeAccountPassword() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".content")));
-		WebElement ChangePassword = driver.findElement(By.cssSelector(".content"));
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[4]/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/p[2]/a")));
+		WebElement ChangePassword = driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/p[2]/a"));
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder
 				.moveToElement(ChangePassword)
 				.click()
 				.build();
 		seriesOfActions.perform();
+		InputNewPassword();
+	}
+	
+	public void InputNewPassword() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("current-password")));
+		WebElement txtCurrentPassword = driver.findElement(By.id("current-password"));
+		Actions builder = new Actions(driver);
+		Action seriesOfActions = builder
+				.moveToElement(txtCurrentPassword)
+				.click()
+				.sendKeys(txtCurrentPassword, "Sakuraandusagi*01041996")
+				.build();
+		seriesOfActions.perform();
 		
+		WebElement txtNewPassword = driver.findElement(By.id("new-password"));
+		Actions builder2 = new Actions(driver);
+		Action seriesOfActions2 = builder2
+				.moveToElement(txtNewPassword)
+				.click()
+				.sendKeys(txtNewPassword, "Sakuraandusagi*123")
+				.build();
+		seriesOfActions2.perform();
+		ChangeYourFlickrPassword();
+	}
+	
+	public void ChangeYourFlickrPassword() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div/div[2]/div/div[2]/form/button")));
+		driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[2]/form/button")).click();
+		WebDriverWait wait2 = new WebDriverWait(driver, 60);
+		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div/div[2]/div/div[1]/div[2]/button")));
+		driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div[2]/button")).click();
 	}
 }
