@@ -48,18 +48,21 @@ public class Comment_Photo {
 		ViewAlbumsPhoto();
 	}
 	
+	
+	// Click on Album title to go to the Album area
 	public void ViewAlbumsPhoto() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".moola-container.feed-ba.upsell-fallback")));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-title.you")));
 		WebElement titleYou = driver.findElement(By.cssSelector(".gn-title.you"));
-		//WebElement titleAlbum = driver.findElement(By.cssSelector("Album"));
+		//Click on Title You 
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder
 				.moveToElement(titleYou)
 				.build();
 		seriesOfActions.perform();
 		
+		// Then select Album
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-submenu li:nth-of-type(3)")));	
 		WebElement Album = driver.findElement(By.cssSelector(".gn-submenu li:nth-of-type(3)"));
 		Actions builder2 = new Actions(driver);
@@ -68,40 +71,60 @@ public class Comment_Photo {
 				.click()
 				.build();
 		seriesOfActions2.perform();
-		
+		WaitTheListAlbum();
+	}
+	
+	//Waiting for the list appear
+	public void WaitTheListAlbum() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".albums-list-container.fluid-centered")));
+		driver.navigate().refresh();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[5]/div/div[4]/a/div")));	
+		ChooseAlbum();
+	}
+	
+	// Choose any Album you want
+	public void ChooseAlbum() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 3000);
 		WebElement ChooseAlbum = driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/div/div[4]/a/div"));
-		Actions builder3 = new Actions(driver);
-		Action seriesOfActions3 = builder3
+		Actions builder = new Actions(driver);
+		Action seriesOfActions = builder
 				.moveToElement(ChooseAlbum)
 				.click()
 				.build();
-		seriesOfActions3.perform();
-		CommentPhoto();
+		seriesOfActions.perform();
+		driver.navigate().refresh();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[3]/div[4]/div/div/a")));
+		ChoosePhoto();
 	}
 	
-	public void CommentPhoto() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[3]/div[5]/div/div/a")));
-		WebElement CommentPhoto = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[3]/div[5]/div/div/a"));
+	// Choose any photo then write a comment
+	public void ChoosePhoto() throws InterruptedException {
+		WebElement ChoosePhoto = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[3]/div[4]/div/div/a"));
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder
-				.moveToElement(CommentPhoto)
+				.moveToElement(ChoosePhoto)
 				.click()
 				.build();
 		seriesOfActions.perform();
+		CommentPhoto();
+	}
 		
+	// Write the text comment
+	public void CommentPhoto() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 3000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".new-comment-text.emoji-flipper-set")));
 		WebElement txtComment = driver.findElement(By.cssSelector(".new-comment-text.emoji-flipper-set"));
 		Actions builder2 = new Actions(driver);
 		Action seriesOfActions2 = builder2
 				.moveToElement(txtComment)
 				.doubleClick(txtComment)
-				.sendKeys(txtComment, "Tomoyo Daidouji")
+				.sendKeys(txtComment, "A beautiful girl, the best friend, the best Sakura's sister")
 				.click()
 				.build();
 		seriesOfActions2.perform();
 		
+		// Click on Comment button to save the data
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".ui-button.ui-button-cta.comment")));
 		WebElement CommentButton = driver.findElement(By.cssSelector(".ui-button.ui-button-cta.comment"));
 		Actions builder3 = new Actions(driver);
