@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Comment_Photo.Comment_Photo">
+      <class name="Change_Account_Password.Change_Account_Password">
         <methods>
-          <include name="LoginInToAccount"/>
+          <include name="ViewAccountInformation"/>
         </methods>
-      </class> <!-- Comment_Photo.Comment_Photo -->
+      </class> <!-- Change_Account_Password.Change_Account_Password -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

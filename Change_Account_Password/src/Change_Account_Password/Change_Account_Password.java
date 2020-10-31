@@ -19,6 +19,7 @@ public class Change_Account_Password {
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
 	public WebDriver driver;
 	
+	
 	// Access to Flickr Webiste
 	@Test
   	public void ViewAccountInformation() throws InterruptedException {
@@ -29,7 +30,7 @@ public class Change_Account_Password {
 	  	driver = new ChromeDriver();
 	  	driver.manage().window().maximize();
 	  	driver.get(baseUrl);
-	  	String expectedTitle = "Find your inspiration. | Flickr";
+	  	String expectedTitle = "Home | Flickr";
 	  	String actualTitle = driver.getTitle();
 	  	
 	  	//2.Click on 'Log In' button
@@ -44,7 +45,11 @@ public class Change_Account_Password {
 		//5.Send 'Password' value to the field
 		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*01041996");		
 		//6.Click 'Log in' button
-		driver.findElement(By.cssSelector("form > button")).click();		
+		driver.findElement(By.cssSelector("form > button")).click();
+		
+		if(actualTitle.contains(expectedTitle)) {
+			System.out.println("Check point : PASS");
+		}
 		//7.Click the avatar icon
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".c-account-menu")));	
 		WebElement Avatar = driver.findElement(By.cssSelector(".c-account-menu"));
@@ -70,14 +75,15 @@ public class Change_Account_Password {
 				.click()
 				.build();
 		seriesOfActions2.perform();
+		driver.navigate().refresh();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='https://identity.flickr.com/change-password']")));
 		ChangeAccountPassword();
 	}
 	
 	// Click on Edit your password
 	public void ChangeAccountPassword() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[4]/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/p[2]/a")));
-		WebElement ChangePassword = driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/p[2]/a"));
+		WebDriverWait wait = new WebDriverWait(driver, 3000);
+		WebElement ChangePassword = driver.findElement(By.xpath("//a[@href='https://identity.flickr.com/change-password']"));
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder
 				.moveToElement(ChangePassword)
@@ -95,7 +101,7 @@ public class Change_Account_Password {
 		Action seriesOfActions = builder
 				.moveToElement(txtCurrentPassword)
 				.click()
-				.sendKeys(txtCurrentPassword, "Sakuraandusagi*01041996")
+				.sendKeys(txtCurrentPassword, "Sakuraandusagi*123")
 				.build();
 		seriesOfActions.perform();
 		
@@ -104,7 +110,7 @@ public class Change_Account_Password {
 		Action seriesOfActions2 = builder2
 				.moveToElement(txtNewPassword)
 				.click()
-				.sendKeys(txtNewPassword, "Sakuraandusagi*123")
+				.sendKeys(txtNewPassword, "Sakuraandusagi*01041996")
 				.build();
 		seriesOfActions2.perform();
 		ChangeYourFlickrPassword();

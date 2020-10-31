@@ -119,7 +119,7 @@ public class Comment_Photo {
 		Action seriesOfActions2 = builder2
 				.moveToElement(txtComment)
 				.doubleClick(txtComment)
-				.sendKeys(txtComment, "A beautiful girl, the best friend, the best Sakura's sister")
+				.sendKeys(txtComment, "Best photo ever!!!!!!!")
 				.click()
 				.build();
 		seriesOfActions2.perform();
