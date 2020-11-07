@@ -42,7 +42,7 @@ public class Comment_Photo {
 		//4.Click on 'Next'
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-password")));		
 		//5.Send 'Password' value to the field
-		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*123");		
+		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*01041996");		
 		//6.Click 'Log in' button
 		driver.findElement(By.cssSelector("form > button")).click();
 		ViewAlbumsPhoto();
@@ -55,12 +55,16 @@ public class Comment_Photo {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".moola-container.feed-ba.upsell-fallback")));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-title.you")));
 		WebElement titleYou = driver.findElement(By.cssSelector(".gn-title.you"));
+		
 		//Click on Title You 
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder
 				.moveToElement(titleYou)
 				.build();
 		seriesOfActions.perform();
+		System.out.println("===============================================");
+		System.out.println("Click on title You has been successfullly");
+		System.out.println("===============================================");
 		
 		// Then select Album
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-submenu li:nth-of-type(3)")));	
@@ -79,7 +83,8 @@ public class Comment_Photo {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".albums-list-container.fluid-centered")));
 		driver.navigate().refresh();
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[5]/div/div[4]/a/div")));	
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[5]/div/div[4]/a/div")));
+		driver.navigate().refresh();
 		ChooseAlbum();
 	}
 	
@@ -112,14 +117,14 @@ public class Comment_Photo {
 		
 	// Write the text comment
 	public void CommentPhoto() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 3000);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".new-comment-text.emoji-flipper-set")));
 		WebElement txtComment = driver.findElement(By.cssSelector(".new-comment-text.emoji-flipper-set"));
 		Actions builder2 = new Actions(driver);
 		Action seriesOfActions2 = builder2
 				.moveToElement(txtComment)
 				.doubleClick(txtComment)
-				.sendKeys(txtComment, "Best photo ever!!!!!!!")
+				.sendKeys(txtComment, "A beautiful lovely angel <3 <3")
 				.click()
 				.build();
 		seriesOfActions2.perform();
@@ -133,5 +138,8 @@ public class Comment_Photo {
 				.click()
 				.build();
 		seriesOfActions3.perform();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("comment-content")));
+		Thread.sleep(5000);
+		driver.navigate().refresh();
 	}
 }
