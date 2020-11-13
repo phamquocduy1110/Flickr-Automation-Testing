@@ -12,6 +12,8 @@ import org.openqa.selenium.interactions.KeyUpAction;
 import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Comment_Photo {
@@ -19,31 +21,41 @@ public class Comment_Photo {
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
 	public WebDriver driver;
 	
-	// Access to Flickr Webiste
-	@Test
-  	public void LoginInToAccount() throws InterruptedException {
-		//1.Navigate to Flickr Website (at http://www.flickr.com)
+	@BeforeTest
+	public void setBaseUrl() {
 		System.out.println("launching chrome browser"); 
 	  	System.setProperty("webdriver.chrome.driver", driverPath);
 	  	System.out.println("Openning chrome browsers");
 	  	driver = new ChromeDriver();
 	  	driver.manage().window().maximize();
+	  	// Navigate to Flickr Website (at http://www.flickr.com)
 	  	driver.get(baseUrl);
+	  	// Check title
 	  	String expectedTitle = "Find your inspiration. | Flickr";
 	  	String actualTitle = driver.getTitle();
-	  	
-	  	//2.Click on 'Log In' button
-	  	driver.findElement(By.cssSelector(".gn-signin")).click();
-	  	WebDriverWait wait = new WebDriverWait(driver, 60);
+	  	Assert.assertEquals(expectedTitle, actualTitle);
+	}
+	
+	// Access to Flickr Webiste
+	@Test
+  	public void LoginInToAccount() throws InterruptedException {
+	  	// Click on 'Log In' button
+	  	WebDriverWait wait = new WebDriverWait(driver, 3000);
+	  	wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-signin")));
+	  	driver.findElement(By.cssSelector(".gn-signin")).click();	  	
 	  	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-email")));
-	  	//3.Send 'Username' value to the field
-		driver.findElement(By.id("login-email")).sendKeys("sakurakinomoto185@gmail.com");
-		driver.findElement(By.cssSelector("form > button")).click();		
-		//4.Click on 'Next'
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-password")));		
-		//5.Send 'Password' value to the field
-		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*01041996");		
-		//6.Click 'Log in' button
+	  	
+	  	// Send 'Username' value to the field
+	    driver.findElement(By.id("login-email")).sendKeys("sakurakinomoto185@gmail.com");
+		driver.findElement(By.cssSelector("form > button")).click(); 
+		
+		// Click on 'Next'
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-password")));	
+		
+		// Send 'Password' value to the field
+		driver.findElement(By.id("login-password")).sendKeys("Sakuraandusagi*01041996");
+		
+		// Click 'Log in' button
 		driver.findElement(By.cssSelector("form > button")).click();
 		ViewAlbumsPhoto();
 	}
@@ -51,6 +63,11 @@ public class Comment_Photo {
 	
 	// Click on Album title to go to the Album area
 	public void ViewAlbumsPhoto() throws InterruptedException {
+		//.Check title 
+	  	String expectedTitle = "Home | Flickr";
+	  	String actualTitle = driver.getTitle();
+	  	Assert.assertEquals(expectedTitle, actualTitle);
+	  	
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".moola-container.feed-ba.upsell-fallback")));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-title.you")));
@@ -63,7 +80,7 @@ public class Comment_Photo {
 				.build();
 		seriesOfActions.perform();
 		System.out.println("===============================================");
-		System.out.println("Click on title You has been successfullly");
+		System.out.println("Title 'You' has been clicked on successfullly");
 		System.out.println("===============================================");
 		
 		// Then select Album
@@ -141,5 +158,10 @@ public class Comment_Photo {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("comment-content")));
 		Thread.sleep(5000);
 		driver.navigate().refresh();
+	}
+	
+	@AfterTest
+	public void endSession() {
+		
 	}
 }
