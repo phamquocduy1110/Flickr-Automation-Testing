@@ -1,5 +1,3 @@
-package Test_Execution_Area1_Package;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,9 +39,6 @@ public class System_Controller_Class {
 			System.out.println("Accessed website's link failed ");
 			System.out.println("===============================================");
 	  	}
-	  	
-	  	Comment_Photo_Class t = new Comment_Photo_Class();
-		t.LoginInToAccount();
 	}
 
 	
