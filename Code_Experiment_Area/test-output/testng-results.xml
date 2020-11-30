@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-13T20:20:39 ICT" name="Default suite" finished-at="2020-11-13T20:21:41 ICT" duration-ms="61812">
+  <suite started-at="2020-11-18T17:33:45 ICT" name="Default suite" finished-at="2020-11-18T17:33:45 ICT" duration-ms="75">
     <groups>
     </groups>
-    <test started-at="2020-11-13T20:20:39 ICT" name="Default test" finished-at="2020-11-13T20:21:41 ICT" duration-ms="61812">
-      <class name="Delete_Comment_Photo.Delete_Comment_Photo">
-        <test-method is-config="true" signature="setBaseUrl()[pri:0, instance:Delete_Comment_Photo.Delete_Comment_Photo@117e949d]" started-at="2020-11-13T20:20:39 ICT" name="setBaseUrl" finished-at="2020-11-13T20:21:05 ICT" duration-ms="26393" status="PASS">
+    <test started-at="2020-11-18T17:33:45 ICT" name="Default test" finished-at="2020-11-18T17:33:45 ICT" duration-ms="75">
+      <class name="Experiment_Package.Other_Class">
+        <test-method is-config="true" signature="activateSystem()[pri:0, instance:Experiment_Package.Other_Class@2d2ffcb7]" started-at="2020-11-18T17:33:45 ICT" name="activateSystem" finished-at="2020-11-18T17:33:45 ICT" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setBaseUrl -->
-        <test-method signature="LoginInToAccount()[pri:0, instance:Delete_Comment_Photo.Delete_Comment_Photo@117e949d]" started-at="2020-11-13T20:21:05 ICT" name="LoginInToAccount" finished-at="2020-11-13T20:21:41 ICT" duration-ms="35375" status="PASS">
+        </test-method> <!-- activateSystem -->
+        <test-method signature="OtherClass()[pri:0, instance:Experiment_Package.Other_Class@2d2ffcb7]" started-at="2020-11-18T17:33:45 ICT" name="OtherClass" finished-at="2020-11-18T17:33:45 ICT" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginInToAccount -->
-      </class> <!-- Delete_Comment_Photo.Delete_Comment_Photo -->
+        </test-method> <!-- OtherClass -->
+        <test-method is-config="true" signature="shutDownSystem()[pri:0, instance:Experiment_Package.Other_Class@2d2ffcb7]" started-at="2020-11-18T17:33:45 ICT" name="shutDownSystem" finished-at="2020-11-18T17:33:45 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutDownSystem -->
+      </class> <!-- Experiment_Package.Other_Class -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
