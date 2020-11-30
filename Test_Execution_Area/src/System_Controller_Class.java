@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,7 @@ public class System_Controller_Class {
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
 	public WebDriver driver;
 	
-	@BeforeTest
+	@BeforeSuite
 	public void LaunchBrowser() throws InterruptedException{
 		System.out.println("launching chrome browser"); 
 	  	System.setProperty("webdriver.chrome.driver", driverPath);
@@ -39,11 +40,5 @@ public class System_Controller_Class {
 			System.out.println("Accessed website's link failed ");
 			System.out.println("===============================================");
 	  	}
-	}
-
-	
-	@AfterMethod
-	public void CloseBrowser() throws InterruptedException {
-	
 	}
 }

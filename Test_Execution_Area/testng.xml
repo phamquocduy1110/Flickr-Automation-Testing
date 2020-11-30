@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite1">
-  <test name="Test1">
+<suite name="Comment_Suite">
+  <test name="Comment">
   	<classes>
-  		<class name="Suite1.Comment_Photo"/>
+  		<class name="Comment_Suite.Comment_Photo"/>
    	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
