@@ -17,7 +17,7 @@ public class Test_1 extends Controller {
 	}
 		
 	@Test	
-	public void test1()
+	public void test1() throws InterruptedException
 	{
 		System.out.println("Test 1");
 	}

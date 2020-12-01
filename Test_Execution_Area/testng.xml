@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Comment_Suite">
-  <test name="Comment">
-  	<classes>
-  		<class name="Comment_Suite.Comment_Photo"/>
-   	</classes>
-  </test> <!-- Test -->
+<suite name="FlickrAutomationTesting">
+	<test name="Flickr">
+		<classes>
+			<class name="Comment_Photo">
+				<methods>
+					<include name="WaitTheListAlbum"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

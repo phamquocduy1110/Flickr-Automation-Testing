@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Execution_Area1_Package.Comment_Photo_Class">
+      <class name="Comment_Photo">
         <methods>
-          <include name="LoginInToAccount"/>
+          <include name="CommentPhoto"/>
           <include name="CloseBrowser"/>
-          <include name="ViewAlbumsPhoto"/>
-          <include name="LaunchBrowser"/>
+          <include name="LoginIntoWebsite"/>
+          <include name="ClickAlbumTitle"/>
+          <include name="WaitTheListAlbum"/>
+          <include name="ChooseAlbum"/>
         </methods>
-      </class> <!-- Test_Execution_Area1_Package.Comment_Photo_Class -->
+      </class> <!-- Comment_Photo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
