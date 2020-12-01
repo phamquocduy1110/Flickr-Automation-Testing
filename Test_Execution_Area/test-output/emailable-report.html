@@ -9,40 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">FlickrAutomationTesting</th></tr>
-<tr><td><a href="#t0">Flickr</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">77,370</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Flickr</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">25,627</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FlickrAutomationTesting</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Flickr &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">Comment_Photo</td><td><a href="#m0">CommentPhoto</a></td><td rowspan="1">1606782056465</td><td rowspan="1">30514</td></tr><tr><th colspan="4">Flickr &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">Comment_Photo</td><td><a href="#m1">AfterClass</a></td><td rowspan="1">1606782086983</td><td rowspan="1">-1606782086983</td></tr><tr><th colspan="4">Flickr &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Comment_Photo</td><td><a href="#m2">WaitTheListAlbum</a></td><td rowspan="1">1606782041731</td><td rowspan="1">14727</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FlickrAutomationTesting</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Flickr &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">View_Account_Information_Class</td><td><a href="#m0">ClickAvatarIcon</a></td><td rowspan="1">1606812012586</td><td rowspan="1">225</td></tr></tbody>
 </table>
-<h2>Flickr</h2><h3 id="m0">Comment_Photo#CommentPhoto</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.cssSelector: .new-comment-text.emoji-flipper-set (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Comment_Photo.CommentPhoto(Comment_Photo.java:79)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.new-comment-text.emoji-flipper-set&quot;}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
-System info: host: &apos;SAKURAAYAMEKINO&apos;, ip: &apos;192.168.111.140&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\DUY~1.187\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:60566}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 9f8c495ff666eafb5f12458074a4da0b
-*** Element info: {Using=css selector, value=.new-comment-text.emoji-flipper-set}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 34 more
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Comment_Photo#AfterClass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Comment_Photo#WaitTheListAlbum</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Flickr</h2><h3 id="m0">View_Account_Information_Class#ClickAvatarIcon</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

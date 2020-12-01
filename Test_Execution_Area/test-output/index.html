@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-FlickrAutomationTesting">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-FlickrAutomationTesting" title="Comment_Photo" class="method navigator-link" hash-for-method="WaitTheListAlbum">WaitTheListAlbum</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-FlickrAutomationTesting" title="View_Account_Information_Class" class="method navigator-link" hash-for-method="ClickAvatarIcon">ClickAvatarIcon</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FlickrAutomationTesting -->
@@ -122,14 +122,14 @@
           <div class="suite-FlickrAutomationTesting-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Comment_Photo</span>
+              <span class="class-name">View_Account_Information_Class</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="WaitTheListAlbum">
-                  </a> <!-- WaitTheListAlbum -->
-                  <span class="method-name">WaitTheListAlbum</span>
+                  <a name="ClickAvatarIcon">
+                  </a> <!-- ClickAvatarIcon -->
+                  <span class="method-name">ClickAvatarIcon</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,11 +146,11 @@
 &lt;suite name=&quot;FlickrAutomationTesting&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Flickr&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Comment_Photo&quot;&gt;
+      &lt;class name=&quot;View_Account_Information_Class&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;WaitTheListAlbum&quot;/&gt;
+          &lt;include name=&quot;ClickAvatarIcon&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- Comment_Photo --&gt;
+      &lt;/class&gt; &lt;!-- View_Account_Information_Class --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Flickr --&gt;
 &lt;/suite&gt; &lt;!-- FlickrAutomationTesting --&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'WaitTheListAlbum')
-data.setCell(0, 2, 'Comment_Photo')
-data.setCell(0, 3, 14727);
+data.setCell(0, 1, 'ClickAvatarIcon')
+data.setCell(0, 2, 'View_Account_Information_Class')
+data.setCell(0, 3, 225);
 window.suiteTableData['FlickrAutomationTesting']= { tableData: data, tableDiv: 'times-div-FlickrAutomationTesting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 225 ms</span>
               <div id="times-div-FlickrAutomationTesting">
               </div> <!-- times-div-FlickrAutomationTesting -->
             </div> <!-- times-div -->
@@ -225,32 +225,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Comment_Photo</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">View_Account_Information_Class</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">FlickrAutomationTesting</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">Flickr</span>
-                <span class="method-start">24065 ms</span>
+                <span class="method-start">40531 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">ClickAlbumTitle</span>
-                <span class="method-start">40281 ms</span>
+                <span class="method-name">WaitHomePage</span>
+                <span class="method-start">48886 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">WaitTheListAlbum</span>
-                <span class="method-start">56179 ms</span>
+                <span class="method-name">ClickAvatarIcon</span>
+                <span class="method-start">60535 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">CommentPhoto</span>
-                <span class="method-start">70913 ms</span>
+                <span class="method-name">ClickOnSettings</span>
+                <span class="method-start">60762 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">AfterClass</span>
-                <span class="method-start">101431 ms</span>
+                <span class="method-start">61142 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

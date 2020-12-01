@@ -3,8 +3,16 @@
 <suite name="FlickrAutomationTesting">
 	<test name="Flickr">
 		<classes>
+			<class name="View_Account_Information_Class">
+				<methods>
+					<include name="ClickAvatarIcon"></include>
+					<include name="ClickOnSettings"></include>
+				</methods>
+			</class>
+
 			<class name="Comment_Photo">
 				<methods>
+					<include name="ClickAlbumTitle"></include>
 					<include name="WaitTheListAlbum"></include>
 				</methods>
 			</class>

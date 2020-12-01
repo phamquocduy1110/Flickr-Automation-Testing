@@ -5,9 +5,9 @@
     <classes>
       <class name="Comment_Photo">
         <methods>
-          <include name="CommentPhoto"/>
-          <include name="CloseBrowser"/>
-          <include name="LoginIntoWebsite"/>
+          <include name="FlickrAutomationTesting"/>
+          <include name="ChoosePhoto"/>
+          <include name="Flickr"/>
           <include name="ClickAlbumTitle"/>
           <include name="WaitTheListAlbum"/>
           <include name="ChooseAlbum"/>
