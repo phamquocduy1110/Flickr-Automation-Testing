@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-08T11:35:05 ICT" name="Default suite" finished-at="2020-12-08T11:35:56 ICT" duration-ms="51283">
+  <suite started-at="2020-12-08T17:39:09 ICT" name="Default suite" finished-at="2020-12-08T17:41:03 ICT" duration-ms="114842">
     <groups>
     </groups>
-    <test started-at="2020-12-08T11:35:05 ICT" name="Default test" finished-at="2020-12-08T11:35:56 ICT" duration-ms="51283">
-      <class name="Like_Photo.Like_Photo">
-        <test-method is-config="true" signature="setBaseUrl()[pri:0, instance:Like_Photo.Like_Photo@10d68fcd]" started-at="2020-12-08T11:35:05 ICT" name="setBaseUrl" finished-at="2020-12-08T11:35:23 ICT" duration-ms="17660" status="PASS">
+    <test started-at="2020-12-08T17:39:09 ICT" name="Default test" finished-at="2020-12-08T17:41:03 ICT" duration-ms="114842">
+      <class name="Like_Photo.Execute">
+        <test-method is-config="true" signature="setBaseUrl()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:39:09 ICT" name="setBaseUrl" finished-at="2020-12-08T17:39:50 ICT" duration-ms="41827" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUrl -->
-        <test-method signature="LoginInToAccount()[pri:0, instance:Like_Photo.Like_Photo@10d68fcd]" started-at="2020-12-08T11:35:23 ICT" name="LoginInToAccount" finished-at="2020-12-08T11:35:34 ICT" duration-ms="11037" status="PASS">
+        <test-method signature="LoginInToAccount()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:39:50 ICT" name="LoginInToAccount" finished-at="2020-12-08T17:40:06 ICT" duration-ms="15452" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginInToAccount -->
-        <test-method signature="ViewRecentPhotos()[pri:1, instance:Like_Photo.Like_Photo@10d68fcd]" started-at="2020-12-08T11:35:34 ICT" name="ViewRecentPhotos" finished-at="2020-12-08T11:35:51 ICT" duration-ms="17115" status="PASS">
+        <test-method signature="ViewRecentPhotos()[pri:1, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:06 ICT" name="ViewRecentPhotos" finished-at="2020-12-08T17:40:34 ICT" duration-ms="28228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ViewRecentPhotos -->
-        <test-method signature="ChoosePhoto()[pri:2, instance:Like_Photo.Like_Photo@10d68fcd]" started-at="2020-12-08T11:35:51 ICT" name="ChoosePhoto" finished-at="2020-12-08T11:35:56 ICT" duration-ms="5248" status="PASS">
+        <test-method signature="ChoosePhoto()[pri:2, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:34 ICT" name="ChoosePhoto" finished-at="2020-12-08T17:40:43 ICT" duration-ms="9193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChoosePhoto -->
-        <test-method signature="LikePhoto()[pri:3, instance:Like_Photo.Like_Photo@10d68fcd]" started-at="2020-12-08T11:35:56 ICT" name="LikePhoto" finished-at="2020-12-08T11:35:56 ICT" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="CloseBrowse()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:43 ICT" name="CloseBrowse" finished-at="2020-12-08T17:41:03 ICT" duration-ms="20095" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LikePhoto -->
-      </class> <!-- Like_Photo.Like_Photo -->
+        </test-method> <!-- CloseBrowse -->
+      </class> <!-- Like_Photo.Execute -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

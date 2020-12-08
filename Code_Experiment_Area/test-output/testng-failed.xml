@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Like_Photo.Like_Photo">
+      <class name="SearchExistAccount.Execute">
         <methods>
-          <include name="LikePhoto"/>
+          <include name="ViewRecentPhotos"/>
+          <include name="ChoosePhoto"/>
           <include name="setBaseUrl"/>
         </methods>
-      </class> <!-- Like_Photo.Like_Photo -->
+      </class> <!-- SearchExistAccount.Execute -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

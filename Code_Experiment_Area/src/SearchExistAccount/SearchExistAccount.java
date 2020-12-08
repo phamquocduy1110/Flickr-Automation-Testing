@@ -1,4 +1,4 @@
-package Like_Photo;
+package SearchExistAccount;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -22,7 +22,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 
-public abstract class Like_Photo {
+public abstract class SearchExistAccount {
 
 	public String baseUrl = "https://flickr.com/";
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
@@ -45,12 +45,12 @@ public abstract class Like_Photo {
 
 	@AfterTest
 	public void CloseBrowse() throws InterruptedException {
-		Thread.sleep(20000);
+		Thread.sleep(10000);
 		driver.close();
 	}
 }
 
-class Execute extends Like_Photo {
+class Execute extends SearchExistAccount {
 	// Access to Flickr Webiste
 	@Test(priority = 0)
 	public void LoginInToAccount() throws InterruptedException {

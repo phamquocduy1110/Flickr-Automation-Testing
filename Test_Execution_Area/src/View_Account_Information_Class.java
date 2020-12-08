@@ -15,13 +15,13 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class View_Account_Information_Class {
+public abstract class View_Account_Information_Class {
 	
 	public String baseUrl = "https://flickr.com/";
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
 	public WebDriver driver;
 
-	@BeforeSuite
+	@BeforeTest
 	public void FlickrAutomationTesting() throws InterruptedException {
 		System.out.println("launching chrome browser"); 
 		System.setProperty("webdriver.chrome.driver", driverPath);
@@ -45,8 +45,20 @@ public class View_Account_Information_Class {
 		}
 	}
 	
-	@BeforeTest
-	public void Flickr() throws InterruptedException {
+	@AfterTest
+	public void CloseBrowser() throws InterruptedException {
+		Thread.sleep(20000);
+		// Close Browser
+		driver.close();
+		
+		// Execute another function
+		
+	}
+}
+
+class TestExecution extends View_Account_Information_Class {
+	@Test(priority = 0)
+	public void LoginFlickr() throws InterruptedException {
 		// Click on 'Log In' button
 		WebDriverWait wait = new WebDriverWait(driver, 3000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".gn-signin")));
@@ -68,13 +80,13 @@ public class View_Account_Information_Class {
 	}
 
 	
-	@BeforeClass
+	@Test(priority = 1)
 	public void WaitHomePage() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".c-account-menu")));	
 	}
 
-	@BeforeMethod
+	@Test(priority = 2)
 	public void ClickAvatarIcon() throws InterruptedException {
 		WebElement Avatar = driver.findElement(By.cssSelector(".c-account-menu"));
 		Actions builder = new Actions(driver);
@@ -86,7 +98,7 @@ public class View_Account_Information_Class {
 		seriesOfActions.perform();
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void ClickOnSettings() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".menu-section li:nth-of-type(2)")));	
@@ -97,20 +109,5 @@ public class View_Account_Information_Class {
 				.click()
 				.build();
 		seriesOfActions2.perform();
-	}
-	
-	@AfterMethod
-	public void Sleep() throws InterruptedException {
-		Thread.sleep(5000);
-	}
-	
-	@AfterClass
-	public void Sleep2() throws InterruptedException {
-		Thread.sleep(5000);
-	}
-	
-	@AfterTest
-	public void CloseBrowser() throws InterruptedException {
-		driver.close();
 	}
 }

@@ -16,7 +16,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Change_Account_Password {
+public abstract class Change_Account_Password {
 	public String baseUrl = "https://flickr.com/";
 	String driverPath = "D:\\Flickr-Automation-Testing\\ChromeDriver\\ChromeDriver.exe";
 	public WebDriver driver;
@@ -45,8 +45,16 @@ public class Change_Account_Password {
 	  	}
 	}
 	
+	@AfterTest
+	public void CloseBrowser() throws InterruptedException {
+		Thread.sleep(9000);
+		driver.close();
+	}
+}
+
+class Change_Account_Password_Execution extends Change_Account_Password {
 	// Access to Flickr Webiste
-	@Test
+	@Test (priority = 0)
   	public void LoginIntoAccount() throws InterruptedException {
 	  	// Click on 'Log In' button
 	  	driver.findElement(By.cssSelector(".gn-signin")).click();
@@ -80,9 +88,10 @@ public class Change_Account_Password {
 		
 		// Click 'Log in' button
 		driver.findElement(By.cssSelector("form > button")).click();
-		CheckPoint();
 	}
 	
+	//Check point for logged in successfully
+	@Test (priority = 1)
 	public void CheckPoint() throws InterruptedException{
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".c-account-menu")));	
@@ -99,9 +108,10 @@ public class Change_Account_Password {
 	  		System.out.println("Login failed");
 	  		System.out.println("===============================================");
 	  	}
-	  	ClickAvtarIcon();
 	}
 	
+	// Click on avartar icon to go to Settings
+	@Test (priority = 2)
 	public void ClickAvtarIcon() throws InterruptedException {
 		// Click the avatar icon
 		WebDriverWait wait = new WebDriverWait(driver, 60);
@@ -114,9 +124,10 @@ public class Change_Account_Password {
 				.click()
 				.build();
 		seriesOfActions.perform();
-		Settings();
 	}
 		
+	// After that, click on Settings
+	@Test (priority = 3)
 	public void Settings() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".menu-section li:nth-of-type(2)")));
@@ -128,10 +139,10 @@ public class Change_Account_Password {
 				.build();
 		seriesOfActions2.perform();
 		driver.navigate().refresh();
-		ChangeAccountPassword();
 	}
 	
 	// Click on Edit your password
+	@Test (priority = 4)
 	public void ChangeAccountPassword() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 600);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='https://identity.flickr.com/change-password']")));

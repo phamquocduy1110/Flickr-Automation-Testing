@@ -3,19 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Comment_Photo">
+      <class name="Execute">
         <methods>
-          <include name="Login"/>
-          <include name="CloseBrowser"/>
-          <include name="CommentPhoto"/>
-          <include name="SaveComment"/>
+          <include name="ViewRecentPhotos"/>
           <include name="ChoosePhoto"/>
-          <include name="FlickrAutomationTesting"/>
-          <include name="WaitHomePage"/>
-          <include name="ClickAlbumTitle"/>
-          <include name="ChooseAlbum"/>
+          <include name="CloseBrowse"/>
+          <include name="setBaseUrl"/>
         </methods>
-      </class> <!-- Comment_Photo -->
+      </class> <!-- Execute -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

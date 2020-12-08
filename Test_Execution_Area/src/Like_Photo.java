@@ -1,5 +1,3 @@
-package Like_Photo;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -115,33 +113,33 @@ class Execute extends Like_Photo {
 				.click()
 				.build();
 		seriesOfActions2.perform();
-		Thread.sleep(9000);
 	}
 
 	// Choose a specific photo
 	@Test (priority = 2)
 	public void ChoosePhoto() throws InterruptedException {
+		Thread.sleep(9000);
+		driver.navigate().refresh();
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='view photo-list-view']/div[position()=2]/div/div/a")));	
 		WebElement ChoosePhoto = driver.findElement(By.xpath("//div[@class='view photo-list-view']/div[position()=2]/div/div/a"));
 		Actions builder2 = new Actions(driver);
 		Action seriesOfActions2 = builder2
 				.moveToElement(ChoosePhoto)
-				.click()
 				.build();
 		seriesOfActions2.perform();
 		Thread.sleep(9000);
 	}
 
-	@Test (priority = 3)
-	public void LikePhoto() throws InterruptedException {
-		WebElement ChoosePhoto = driver.findElement(By.xpath("//div[@class='view photo-engagement-view']/div[position()=1]/div[@class='button']/a[@class='fave-star star_control  ']"));
-		Actions builder = new Actions(driver);
-		Action seriesOfActions = builder
-				.moveToElement(ChoosePhoto)
-				.click()
-				.build();
-		seriesOfActions.perform();
-	}
+//	@Test (priority = 3)
+//	public void LikePhoto() throws InterruptedException {
+//		WebElement ChoosePhoto = driver.findElement(By.xpath("//div[@class='view photo-engagement-view']/div[position()=1]/div[@class='button']/a[@class='fave-star star_control  ']"));
+//		Actions builder = new Actions(driver);
+//		Action seriesOfActions = builder
+//				.moveToElement(ChoosePhoto)
+//				.click()
+//				.build();
+//		seriesOfActions.perform();
+//	}
 }
 

@@ -3,13 +3,6 @@
 <suite name="FlickrAutomationTesting">
 	<test name="Flickr">
 		<classes>
-			<class name="Comment_Photo">
-				<methods>
-					<include name="WaitTheListAlbum"></include>
-					<include name="ChooseAlbum"></include>
-					<include name="ChoosePhoto"></include>
-				</methods>
-			</class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
