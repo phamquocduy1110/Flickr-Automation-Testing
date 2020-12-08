@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-FlickrAutomationTesting" class="navigator-link">
-              <span class="suite-name border-passed">FlickrAutomationTesting</span>
+              <span class="suite-name border-failed">FlickrAutomationTesting</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-FlickrAutomationTesting" class="hide-methods failed suite-FlickrAutomationTesting"> (hide)</a> <!-- hide-methods failed suite-FlickrAutomationTesting -->
+                      <a href="#" panel-name="suite-FlickrAutomationTesting" class="show-methods failed suite-FlickrAutomationTesting"> (show)</a> <!-- show-methods failed suite-FlickrAutomationTesting -->
+                    </span>
+                    <div class="method-list-content failed suite-FlickrAutomationTesting">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-FlickrAutomationTesting" title="Comment_Photo" class="method navigator-link" hash-for-method="ChooseAlbum">ChooseAlbum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-FlickrAutomationTesting -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +118,7 @@
                     <div class="method-list-content passed suite-FlickrAutomationTesting">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-FlickrAutomationTesting" title="View_Account_Information_Class" class="method navigator-link" hash-for-method="ClickAvatarIcon">ClickAvatarIcon</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-FlickrAutomationTesting" title="Comment_Photo" class="method navigator-link" hash-for-method="WaitTheListAlbum">WaitTheListAlbum</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FlickrAutomationTesting -->
@@ -119,17 +133,57 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-FlickrAutomationTesting" class="panel FlickrAutomationTesting">
-          <div class="suite-FlickrAutomationTesting-class-passed">
+          <div class="suite-FlickrAutomationTesting-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">View_Account_Information_Class</span>
+              <img src="failed.png"/>
+              <span class="class-name">Comment_Photo</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ClickAvatarIcon">
-                  </a> <!-- ClickAvatarIcon -->
-                  <span class="method-name">ClickAvatarIcon</span>
+                  <a name="ChooseAlbum">
+                  </a> <!-- ChooseAlbum -->
+                  <span class="method-name">ChooseAlbum</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=86.0.4240.198)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
+System info: host: &apos;SAKURAAYAMEKINO&apos;, ip: &apos;10.9.80.238&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\DUY~1.187\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:64056}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: aa3a7113b6939d6327d67f3cf5c487a1
+*** Element info: {Using=xpath, value=/html/body/div[1]/div/div[2]/div[3]/div[4]/div/div/a}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at Comment_Photo.ChooseAlbum(Comment_Photo.java:127)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-FlickrAutomationTesting-class-failed -->
+          <div class="suite-FlickrAutomationTesting-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Comment_Photo</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="WaitTheListAlbum">
+                  </a> <!-- WaitTheListAlbum -->
+                  <span class="method-name">WaitTheListAlbum</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,11 +200,13 @@
 &lt;suite name=&quot;FlickrAutomationTesting&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Flickr&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;View_Account_Information_Class&quot;&gt;
+      &lt;class name=&quot;Comment_Photo&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;ClickAvatarIcon&quot;/&gt;
+          &lt;include name=&quot;WaitTheListAlbum&quot;/&gt;
+          &lt;include name=&quot;ChooseAlbum&quot;/&gt;
+          &lt;include name=&quot;ChoosePhoto&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- View_Account_Information_Class --&gt;
+      &lt;/class&gt; &lt;!-- Comment_Photo --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Flickr --&gt;
 &lt;/suite&gt; &lt;!-- FlickrAutomationTesting --&gt;
@@ -190,16 +246,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ClickAvatarIcon')
-data.setCell(0, 2, 'View_Account_Information_Class')
-data.setCell(0, 3, 225);
+data.setCell(0, 1, 'ChooseAlbum')
+data.setCell(0, 2, 'Comment_Photo')
+data.setCell(0, 3, 1568787);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'WaitTheListAlbum')
+data.setCell(1, 2, 'Comment_Photo')
+data.setCell(1, 3, 15206);
 window.suiteTableData['FlickrAutomationTesting']= { tableData: data, tableDiv: 'times-div-FlickrAutomationTesting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 225 ms</span>
+              <span class="suite-total-time">Total running time: 26 minutes</span>
               <div id="times-div-FlickrAutomationTesting">
               </div> <!-- times-div-FlickrAutomationTesting -->
             </div> <!-- times-div -->
@@ -225,31 +285,37 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">View_Account_Information_Class</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Comment_Photo</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">FlickrAutomationTesting</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">Flickr</span>
-                <span class="method-start">40531 ms</span>
+                <span class="method-name">Login</span>
+                <span class="method-start">39655 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">WaitHomePage</span>
-                <span class="method-start">48886 ms</span>
+                <span class="method-start">46732 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">ClickAlbumTitle</span>
+                <span class="method-start">58871 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ClickAvatarIcon</span>
-                <span class="method-start">60535 ms</span>
+                <span class="method-name">WaitTheListAlbum</span>
+                <span class="method-start">67289 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">ClickOnSettings</span>
-                <span class="method-start">60762 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">AfterClass</span>
-                <span class="method-start">61142 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="configuration-method before">
+                <span class="method-name">ClickAlbumTitle</span>
+                <span class="method-start">82503 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ChooseAlbum</span>
+                <span class="method-start">90902 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

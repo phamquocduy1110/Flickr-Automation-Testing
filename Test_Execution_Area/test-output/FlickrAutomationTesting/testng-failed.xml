@@ -3,16 +3,15 @@
 <suite name="Failed suite [FlickrAutomationTesting]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Flickr(failed)">
     <classes>
-      <class name="View_Account_Information_Class">
+      <class name="Comment_Photo">
         <methods>
+          <include name="Login"/>
           <include name="FlickrAutomationTesting"/>
-          <include name="ClickOnSettings"/>
-          <include name="AfterClass"/>
-          <include name="Flickr"/>
           <include name="WaitHomePage"/>
-          <include name="ClickAvatarIcon"/>
+          <include name="ClickAlbumTitle"/>
+          <include name="ChooseAlbum"/>
         </methods>
-      </class> <!-- View_Account_Information_Class -->
+      </class> <!-- Comment_Photo -->
     </classes>
   </test> <!-- Flickr(failed) -->
 </suite> <!-- Failed suite [FlickrAutomationTesting] -->

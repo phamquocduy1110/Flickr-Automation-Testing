@@ -5,11 +5,14 @@
     <classes>
       <class name="Comment_Photo">
         <methods>
-          <include name="FlickrAutomationTesting"/>
+          <include name="Login"/>
+          <include name="CloseBrowser"/>
+          <include name="CommentPhoto"/>
+          <include name="SaveComment"/>
           <include name="ChoosePhoto"/>
-          <include name="Flickr"/>
+          <include name="FlickrAutomationTesting"/>
+          <include name="WaitHomePage"/>
           <include name="ClickAlbumTitle"/>
-          <include name="WaitTheListAlbum"/>
           <include name="ChooseAlbum"/>
         </methods>
       </class> <!-- Comment_Photo -->
