@@ -59,25 +59,10 @@ class Change_Account_Password_Execution extends Change_Account_Password {
 	  	// Click on 'Log In' button
 	  	driver.findElement(By.cssSelector(".gn-signin")).click();
 	  	WebDriverWait wait = new WebDriverWait(driver, 60);
-	  	
-	  	// Check title
-	  	String expectedTitle = "Flickr Login";
-	  	String actualTitle = driver.getTitle();
-	  	Assert.assertEquals(expectedTitle, actualTitle);
-	  	if (actualTitle.contains(expectedTitle)) {
-	  		System.out.println("===============================================");
-	  		System.out.println("Move to login page has been successfully.");
-	  		System.out.println("===============================================");
-	  	}
-	  	else {
-	  		System.out.println("===============================================");
-	  		System.out.println("Move to login page has been failed");
-	  		System.out.println("===============================================");
-	  	}
 	  	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-email")));
 	  	
 	  	// Send 'Username' value to the field
-		driver.findElement(By.id("login-email")).sendKeys("phamquocduy1110@gmail.com");
+		driver.findElement(By.id("login-email")).sendKeys("sakurakinomoto185@gmail.com");
 		driver.findElement(By.cssSelector("form > button")).click();
 		
 		// Click on 'Next'
@@ -146,18 +131,6 @@ class Change_Account_Password_Execution extends Change_Account_Password {
 	public void ChangeAccountPassword() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 600);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='https://identity.flickr.com/change-password']")));
-		String expectedTitle = "Account settings | Flickr";
-	  	String actualTitle = driver.getTitle();
-	  	if (actualTitle.contains(expectedTitle)) {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Move to Settings has been successfully");
-	  		System.out.println("===============================================");
-	  	}
-	  	else {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Move to Settings has been failed");
-	  		System.out.println("===============================================");
-	  	}
 	  	Thread.sleep(5000);
 	  	WebElement ChangePassword = driver.findElement(By.xpath("//a[@href='https://identity.flickr.com/change-password']"));
 		Actions builder = new Actions(driver);
@@ -166,24 +139,12 @@ class Change_Account_Password_Execution extends Change_Account_Password {
 				.click()
 				.build();
 		seriesOfActions.perform();
-		InputNewPassword();
 	}
 	
+	// Input new password
+	@Test (priority = 5)
 	public void InputNewPassword() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		String expectedTitle = "Flickr Login";
-	  	String actualTitle = driver.getTitle();
-	  	if (actualTitle.contains(expectedTitle)) {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Move to (Edit your password)'s page has been successfully");
-	  		System.out.println("===============================================");
-	  	}
-	  	else {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Move to (Edit your password)'s page has been failed");
-	  		System.out.println("===============================================");
-	  	}
-	  	
 	  	// Input current password in txtCurrentPassword
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("current-password")));
 		WebElement txtCurrentPassword = driver.findElement(By.id("current-password"));
@@ -204,9 +165,10 @@ class Change_Account_Password_Execution extends Change_Account_Password {
 				.sendKeys(txtNewPassword, "Sakuraandusagi*123")
 				.build();
 		seriesOfActions2.perform();
-		ChangeYourFlickrPassword();
 	}
 	
+	// Change password
+	@Test (priority = 6)
 	public void ChangeYourFlickrPassword() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='mt-5 c-white bg-blue flickr-button flex align-center justify-center f-size-3 f-weight-bold over-y-hidden block w-100 b-rad-1 py-2 px-4']")));
@@ -214,28 +176,8 @@ class Change_Account_Password_Execution extends Change_Account_Password {
 		driver.findElement(By.xpath("//button[@class='mt-5 c-white bg-blue flickr-button flex align-center justify-center f-size-3 f-weight-bold over-y-hidden block w-100 b-rad-1 py-2 px-4']")).click();
 		WebDriverWait wait2 = new WebDriverWait(driver, 60);
 		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='c-white bg-blue flickr-button flex align-center justify-center f-size-3 f-weight-bold over-y-hidden block w-100 b-rad-1 py-2 px-4']")));
-		String expectedTitle = "Flickr Login";
-	  	String actualTitle = driver.getTitle();
-	  	if (actualTitle.contains(expectedTitle)) {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Password has been changed successfully");
-	  		System.out.println("===============================================");
-	  	}
-	  	else {
-	  		System.out.println("\n===============================================");
-	  		System.out.println("Changed password has been failed");
-	  		System.out.println("===============================================");
-	  	}
 	  	Thread.sleep(6000);
 		driver.findElement(By.xpath("//button[@class='c-white bg-blue flickr-button flex align-center justify-center f-size-3 f-weight-bold over-y-hidden block w-100 b-rad-1 py-2 px-4']")).click();
 		Thread.sleep(8000);
-	}
-	
-	@AfterTest
-	public void endSession() throws InterruptedException {
-		System.out.println("\n===============================================");
-  		System.out.println("Quit browser");
-  		System.out.println("===============================================");
-		driver.quit();
 	}
 }

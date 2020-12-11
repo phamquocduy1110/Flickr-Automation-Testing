@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-08T17:39:09 ICT" name="Default suite" finished-at="2020-12-08T17:41:03 ICT" duration-ms="114842">
+  <suite started-at="2020-12-08T18:26:28 ICT" name="Default suite" finished-at="2020-12-08T18:28:05 ICT" duration-ms="96912">
     <groups>
     </groups>
-    <test started-at="2020-12-08T17:39:09 ICT" name="Default test" finished-at="2020-12-08T17:41:03 ICT" duration-ms="114842">
-      <class name="Like_Photo.Execute">
-        <test-method is-config="true" signature="setBaseUrl()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:39:09 ICT" name="setBaseUrl" finished-at="2020-12-08T17:39:50 ICT" duration-ms="41827" status="PASS">
+    <test started-at="2020-12-08T18:26:28 ICT" name="Default test" finished-at="2020-12-08T18:28:05 ICT" duration-ms="96912">
+      <class name="Change_Account_Password.Change_Account_Password_Execution">
+        <test-method is-config="true" signature="setBaseUrl()[pri:0, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:26:28 ICT" name="setBaseUrl" finished-at="2020-12-08T18:27:13 ICT" duration-ms="44684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUrl -->
-        <test-method signature="LoginInToAccount()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:39:50 ICT" name="LoginInToAccount" finished-at="2020-12-08T17:40:06 ICT" duration-ms="15452" status="PASS">
+        <test-method signature="LoginIntoAccount()[pri:0, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:13 ICT" name="LoginIntoAccount" finished-at="2020-12-08T18:27:21 ICT" duration-ms="8480" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginInToAccount -->
-        <test-method signature="ViewRecentPhotos()[pri:1, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:06 ICT" name="ViewRecentPhotos" finished-at="2020-12-08T17:40:34 ICT" duration-ms="28228" status="PASS">
+        </test-method> <!-- LoginIntoAccount -->
+        <test-method signature="CheckPoint()[pri:1, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:21 ICT" name="CheckPoint" finished-at="2020-12-08T18:27:27 ICT" duration-ms="5897" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewRecentPhotos -->
-        <test-method signature="ChoosePhoto()[pri:2, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:34 ICT" name="ChoosePhoto" finished-at="2020-12-08T17:40:43 ICT" duration-ms="9193" status="PASS">
+        </test-method> <!-- CheckPoint -->
+        <test-method signature="ClickAvtarIcon()[pri:2, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:27 ICT" name="ClickAvtarIcon" finished-at="2020-12-08T18:27:27 ICT" duration-ms="229" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ChoosePhoto -->
-        <test-method is-config="true" signature="CloseBrowse()[pri:0, instance:Like_Photo.Execute@6db9f5a4]" started-at="2020-12-08T17:40:43 ICT" name="CloseBrowse" finished-at="2020-12-08T17:41:03 ICT" duration-ms="20095" status="PASS">
+        </test-method> <!-- ClickAvtarIcon -->
+        <test-method signature="Settings()[pri:3, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:27 ICT" name="Settings" finished-at="2020-12-08T18:27:28 ICT" duration-ms="407" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CloseBrowse -->
-      </class> <!-- Like_Photo.Execute -->
+        </test-method> <!-- Settings -->
+        <test-method signature="ChangeAccountPassword()[pri:4, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:28 ICT" name="ChangeAccountPassword" finished-at="2020-12-08T18:27:39 ICT" duration-ms="11049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeAccountPassword -->
+        <test-method signature="InputNewPassword()[pri:5, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:39 ICT" name="InputNewPassword" finished-at="2020-12-08T18:27:41 ICT" duration-ms="1855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InputNewPassword -->
+        <test-method signature="ChangeYourFlickrPassword()[pri:6, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:41 ICT" name="ChangeYourFlickrPassword" finished-at="2020-12-08T18:27:56 ICT" duration-ms="15237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeYourFlickrPassword -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:Change_Account_Password.Change_Account_Password_Execution@3c0be339]" started-at="2020-12-08T18:27:56 ICT" name="CloseBrowser" finished-at="2020-12-08T18:28:05 ICT" duration-ms="9045" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- Change_Account_Password.Change_Account_Password_Execution -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

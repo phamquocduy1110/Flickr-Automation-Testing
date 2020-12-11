@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SearchExistAccount.Execute">
+      <class name="Change_Account_Password.Change_Account_Password_Execution">
         <methods>
-          <include name="ViewRecentPhotos"/>
-          <include name="ChoosePhoto"/>
+          <include name="CloseBrowser"/>
+          <include name="ChangeYourFlickrPassword"/>
           <include name="setBaseUrl"/>
         </methods>
-      </class> <!-- SearchExistAccount.Execute -->
+      </class> <!-- Change_Account_Password.Change_Account_Password_Execution -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
